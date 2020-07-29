@@ -63,6 +63,6 @@ gulp.task("watch", function() {
     gulp.watch("app/js/*.js", gulp.parallel("mainjs"));
 });
 
-gulp.task("default", function() {
-    gulp.parallel("watch");
+gulp.task("default", async function() {
+    gulp.series("jslibs", "csslibs", "mainjs", "fonts", "img", "svg");
 });

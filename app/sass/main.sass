@@ -1,0 +1,72 @@
+$adventure-theme-color : #FCEDBE
+$action-theme-color : #F6BB92
+$drama-theme-color : #FFE67A
+$comedy-theme-color : #E82F3E
+$thriller-theme-color : #0296E5
+$horror-theme-color : #CDDDEF
+$documentary-theme-color : #999
+
+body
+    margin: 0
+    padding: 0
+    background: #262626
+    user-select: none
+*
+    box-sizing: border-box
+.theme
+    &__adventure
+        color: $adventure-theme-color
+    &__action
+        color: $action-theme-color
+    &__drama
+        color: $drama-theme-color
+    &__comedy
+        color: $comedy-theme-color
+    &__thriller
+        color: $thriller-theme-color
+    &__horror
+        color: $horror-theme-color
+    &__documentary
+        color: $documentary-theme-color
+.navbar
+    height: 100vh
+    width: 110px
+    position: fixed
+    box-shadow: 0 0 20px rgba(#000, .05)
+    &__option
+        width: 100%
+        height: calc((100vh - 80px) / 8)
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        cursor: pointer
+        overflow: hidden
+        position: relative
+        &::after
+            content: ""
+            position: absolute
+            width: 200px
+            height: 200px
+            border-radius: 50%
+            background: rgba(#fff, .1)
+            z-index: -10
+            transform: scale(0)
+            transition: .5s transform ease-in-out
+        &:hover
+            &::after
+                transform: scale(100%)
+        &__title
+            font-size: 12px
+            font-family: "Apercu Bold"
+            text-transform: uppercase
+            display: block
+            margin-top: 5px
+            padding: 3.5px 6px 3px 6px
+            border-radius: 3px
+        &__icon
+            embed
+                width: 30px
+    .logo
+        width: 80px
+        height: 80px
